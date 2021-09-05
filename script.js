@@ -15,7 +15,7 @@ const getValue = () => {
     }
     else {
         displayItems(itemName.value, itemPrice.value);
-        addProductToCart()
+        addProductToCart(itemName.value, itemPrice.value)
     }
 
     itemName.value = '';
@@ -47,4 +47,4 @@ const addProductToCart = (name, price) => {
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied);
 }
-loadStorage()
+loadStorage();
