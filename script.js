@@ -53,4 +53,10 @@ const addProductToCart = (name, price) => {
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied);
 }
+const checkout = () => {
+    document.getElementById('display-cart').textContent = '';
+    localStorage.removeItem('cart');
+}
+
+
 loadStorage();
