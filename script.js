@@ -43,7 +43,13 @@ const getCart = () => {
 
 const addProductToCart = (name, price) => {
     const cart = getCart();
-    cart[name] = price;
+    console.log(cart)
+    if (cart[name]) {
+        cart[name] = parseInt(cart[name]) + parseInt(price);
+    }
+    else {
+        cart[name] = price;
+    }
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied);
 }
